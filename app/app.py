@@ -7,7 +7,7 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/teste', methods=['GET'])
-def get_generic(med):
+def get_generic():
     return 'testado!'
 
 @app.route('/with/<name>', methods=['GET'])
