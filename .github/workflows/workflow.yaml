@@ -20,4 +20,4 @@ jobs:
       run: |
         echo "Fazendo deploy localmente no servidor"
         cd /var/www/html  # Diretório onde sua aplicação está
-        git pull origin dev  # Faz o pull das últimas mudanças
+        git pull origin main  # Faz o pull das últimas mudanças
