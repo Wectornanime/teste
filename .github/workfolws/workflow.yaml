@@ -1,0 +1,23 @@
+name: Deploy Página HTML
+
+# O workflow será acionado em push para a branch main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]  # Usa o runner auto-hospedado e especifica o SO (Linux, nesse caso)
+
+    steps:
+    # 1. Checar o código
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    # 2. Deply no server
+    - name: Deploy local
+      run: |
+        echo "Fazendo deploy localmente no servidor"
+        cd /var/www/html  # Diretório onde sua aplicação está
+        git pull origin dev  # Faz o pull das últimas mudanças
